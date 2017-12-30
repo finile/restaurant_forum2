@@ -12,6 +12,7 @@
                 <a href="#"><%= restaurant.category.name %></a>
               </h4>
                 <p class="card-text"><%= truncate(restaurant.description, length: 80) %></p>
+                <%= render partial: "shared/favorite", locals: {restaurant: restaurant} %>
             </div>
           </div>
         </div>
