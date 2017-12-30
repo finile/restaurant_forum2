@@ -1,0 +1,25 @@
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container"> 
+      <a class="navbar-brand" href="#">餐廳評論網</a>
+    </div>
+  </nav>
+
+
+ <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+      <ul class="nav nav-pills">
+        <li role="presentation"><%= link_to "全部餐廳", root_path %></li>
+        <% @categories.each do |category| %>
+        <li role="presentation" class="<%= "active" if category == @category %>"><%= link_to category.name, category_path(category) %></li>
+        <% end %>
+      </ul>
+
+    </div>
+
+    <%= render partial: "shared/restaurant_list" %>
+
+</body>
+

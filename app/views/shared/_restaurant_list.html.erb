@@ -1,0 +1,30 @@
+    <div class="row">
+      <% @restaurants.each do |restaurant| %>
+        <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+          <div class="card h-100">
+           <!--  <a href="#"><%= image_tag restaurant.image, size:"700x400", class: "img-thumbnail" %></a> -->
+           <img src="http://via.placeholder.com/350x350" class="img-responsive img-rounded">
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#"><%= link_to restaurant.name, restaurant_path(restaurant) %></a>
+              </h4>
+              <h4 class="card-title">
+                <a href="#"><%= restaurant.category.name %></a>
+              </h4>
+                <p class="card-text"><%= truncate(restaurant.description, length: 80) %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <ul class="pagination justify-content-center">
+     <%= paginate @restaurants %>
+    </ul>
+  </div>
+
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+    </div>
+  </footer>

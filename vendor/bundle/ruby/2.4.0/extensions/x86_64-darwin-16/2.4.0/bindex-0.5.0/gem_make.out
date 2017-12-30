@@ -1,0 +1,15 @@
+current directory: /Users/Nile/Desktop/alphacamp_lighthouse/rails_project/restaurant_forum/vendor/bundle/ruby/2.4.0/gems/bindex-0.5.0/ext/bindex
+/usr/local/opt/ruby/bin/ruby -r ./siteconf20171121-3449-txl6tf.rb extconf.rb
+creating Makefile
+
+current directory: /Users/Nile/Desktop/alphacamp_lighthouse/rails_project/restaurant_forum/vendor/bundle/ruby/2.4.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" clean
+
+current directory: /Users/Nile/Desktop/alphacamp_lighthouse/rails_project/restaurant_forum/vendor/bundle/ruby/2.4.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR="
+compiling cruby.c
+linking shared-object bindex/cruby.bundle
+
+current directory: /Users/Nile/Desktop/alphacamp_lighthouse/rails_project/restaurant_forum/vendor/bundle/ruby/2.4.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20171121-3449-vofx5u/bindex

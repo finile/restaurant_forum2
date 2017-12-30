@@ -1,0 +1,21 @@
+current directory: /Users/Nile/Desktop/alphacamp_lighthouse/rails_project/restaurant_forum/vendor/bundle/ruby/2.4.0/gems/puma-3.10.0/ext/puma_http11
+/usr/local/opt/ruby/bin/ruby -r ./siteconf20171121-3449-iva40f.rb extconf.rb
+checking for BIO_read() in -lcrypto... yes
+checking for SSL_CTX_new() in -lssl... yes
+checking for openssl/bio.h... yes
+creating Makefile
+
+current directory: /Users/Nile/Desktop/alphacamp_lighthouse/rails_project/restaurant_forum/vendor/bundle/ruby/2.4.0/gems/puma-3.10.0/ext/puma_http11
+make "DESTDIR=" clean
+
+current directory: /Users/Nile/Desktop/alphacamp_lighthouse/rails_project/restaurant_forum/vendor/bundle/ruby/2.4.0/gems/puma-3.10.0/ext/puma_http11
+make "DESTDIR="
+compiling http11_parser.c
+compiling io_buffer.c
+compiling mini_ssl.c
+compiling puma_http11.c
+linking shared-object puma/puma_http11.bundle
+
+current directory: /Users/Nile/Desktop/alphacamp_lighthouse/rails_project/restaurant_forum/vendor/bundle/ruby/2.4.0/gems/puma-3.10.0/ext/puma_http11
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 puma_http11.bundle ./.gem.20171121-3449-d40bzq/puma
