@@ -19744,3 +19744,1338 @@ Processing by RestaurantsController#ranking as HTML
 Completed 200 OK in 107ms (Views: 100.9ms | ActiveRecord: 2.2ms)
 
 
+Started GET "/restaurants/ranking" for 127.0.0.1 at 2017-12-31 22:04:38 +0800
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RestaurantsController#ranking as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering restaurants/ranking.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.8ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" ORDER BY "restaurants"."favorites_count" DESC LIMIT ?[0m  [["LIMIT", 10]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (34.0ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 2], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.8ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 7], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (2.0ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 3], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.6ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 4], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (2.9ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 5], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 6], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 8], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 9], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.7ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 10], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.5ms)
+  Rendered restaurants/ranking.html.erb within layouts/application (93.8ms)
+Completed 200 OK in 392ms (Views: 333.1ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/restaurants/1/unfavorite" for 127.0.0.1 at 2017-12-31 22:04:41 +0800
+Processing by RestaurantsController#unfavorite as HTML
+  Parameters: {"authenticity_token"=>"DwW3YvnnGa4WMTQ5yvrfLXUtYcDG8odmm4Ct7PseEyIiz+E0K6cQsXLoVGzSBs72l6SscFBiwmJxx/sH6mrMNw==", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFavorite Load (0.1ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."restaurant_id" = 1 AND "favorites"."user_id" = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = ?[0m  [["id", 35]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "restaurants" SET "favorites_count" = COALESCE("favorites_count", 0) - 1 WHERE "restaurants"."id" = ?[0m  [["id", 1]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/restaurants/ranking
+Completed 302 Found in 16ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/restaurants/ranking" for 127.0.0.1 at 2017-12-31 22:04:41 +0800
+Processing by RestaurantsController#ranking as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering restaurants/ranking.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.5ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" ORDER BY "restaurants"."favorites_count" DESC LIMIT ?[0m  [["LIMIT", 10]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 2], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.5ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 7], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.2ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.5ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 3], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 4], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (0.9ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 5], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.2ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 6], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.5ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 8], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (2.8ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 9], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (2.1ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 10], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (5.5ms)
+  Rendered restaurants/ranking.html.erb within layouts/application (43.0ms)
+Completed 200 OK in 133ms (Views: 127.7ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/restaurants/2/unfavorite" for 127.0.0.1 at 2017-12-31 22:04:45 +0800
+Processing by RestaurantsController#unfavorite as HTML
+  Parameters: {"authenticity_token"=>"p6ntQ0gL+LBrGukUvYnWju+y02+496gTrYHbwb4P1QOKY7sVmkvxrw/DiUGldcdVDTse3y5n7RdHxo0qr3sKFg==", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFavorite Load (0.1ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."restaurant_id" = 2 AND "favorites"."user_id" = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = ?[0m  [["id", 36]]
+  [1m[36mRestaurant Load (0.6ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "restaurants" SET "favorites_count" = COALESCE("favorites_count", 0) - 1 WHERE "restaurants"."id" = ?[0m  [["id", 2]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/restaurants/ranking
+Completed 302 Found in 9ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/restaurants/ranking" for 127.0.0.1 at 2017-12-31 22:04:45 +0800
+Processing by RestaurantsController#ranking as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering restaurants/ranking.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.5ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" ORDER BY "restaurants"."favorites_count" DESC LIMIT ?[0m  [["LIMIT", 10]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 7], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.7ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.5ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 2], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 3], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 4], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 5], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.2ms)
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 6], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.7ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 8], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.5ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 9], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.2ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 10], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.2ms)
+  Rendered restaurants/ranking.html.erb within layouts/application (35.6ms)
+Completed 200 OK in 92ms (Views: 86.7ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/restaurants/7/unfavorite" for 127.0.0.1 at 2017-12-31 22:04:48 +0800
+Processing by RestaurantsController#unfavorite as HTML
+  Parameters: {"authenticity_token"=>"bpTP0T/m8foLSleJygVhF9T3hmJ+nNNuPsiZzr7CIVFDXpmH7ab45W+TN9zS+XDMNn5L0ugMlmrUj88lr7b+RA==", "id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mFavorite Load (0.1ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."restaurant_id" = 7 AND "favorites"."user_id" = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = ?[0m  [["id", 40]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "restaurants" SET "favorites_count" = COALESCE("favorites_count", 0) - 1 WHERE "restaurants"."id" = ?[0m  [["id", 7]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/restaurants/ranking
+Completed 302 Found in 6ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/restaurants/ranking" for 127.0.0.1 at 2017-12-31 22:04:48 +0800
+Processing by RestaurantsController#ranking as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering restaurants/ranking.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.8ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" ORDER BY "restaurants"."favorites_count" DESC LIMIT ?[0m  [["LIMIT", 10]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.7ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 2], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.3ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 3], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.2ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 7], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 4], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 5], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 6], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 8], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.7ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 9], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.3ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 10], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (0.9ms)
+  Rendered restaurants/ranking.html.erb within layouts/application (35.9ms)
+Completed 200 OK in 85ms (Views: 80.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/restaurants/ranking" for 127.0.0.1 at 2017-12-31 22:04:50 +0800
+Processing by RestaurantsController#ranking as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering restaurants/ranking.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.5ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" ORDER BY "restaurants"."favorites_count" DESC LIMIT ?[0m  [["LIMIT", 10]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.6ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 2], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.5ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 3], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.2ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 7], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.2ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 4], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 5], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 6], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 8], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.2ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 9], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.5ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 10], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  Rendered restaurants/ranking.html.erb within layouts/application (34.5ms)
+Completed 200 OK in 91ms (Views: 86.3ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/restaurants/1/favorite" for 127.0.0.1 at 2017-12-31 22:04:52 +0800
+Processing by RestaurantsController#favorite as HTML
+  Parameters: {"authenticity_token"=>"VRSMBHgYsKbYyNCZwxq0dg5bqEarF9HHKOOVW4anvIp43tpSqli5ubwRsMzb5qWt7NJl9j2HlMPCpMOwl9Njnw==", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "restaurant_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["restaurant_id", 1], ["created_at", "2017-12-31 14:04:52.757740"], ["updated_at", "2017-12-31 14:04:52.757740"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "restaurants" SET "favorites_count" = COALESCE("favorites_count", 0) + 1 WHERE "restaurants"."id" = ?[0m  [["id", 1]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/restaurants/ranking
+Completed 302 Found in 7ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/restaurants/ranking" for 127.0.0.1 at 2017-12-31 22:04:52 +0800
+Processing by RestaurantsController#ranking as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering restaurants/ranking.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.5ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" ORDER BY "restaurants"."favorites_count" DESC LIMIT ?[0m  [["LIMIT", 10]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.7ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 2], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 3], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.3ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 7], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.7ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 4], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 5], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (0.9ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 6], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 8], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.2ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 9], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.6ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 10], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  Rendered restaurants/ranking.html.erb within layouts/application (34.7ms)
+Completed 200 OK in 82ms (Views: 77.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/restaurants/ranking" for 127.0.0.1 at 2017-12-31 22:04:54 +0800
+Processing by RestaurantsController#ranking as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering restaurants/ranking.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.6ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" ORDER BY "restaurants"."favorites_count" DESC LIMIT ?[0m  [["LIMIT", 10]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.7ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 2], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.5ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 3], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.2ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 7], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.6ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 4], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 5], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 6], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 8], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.2ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 9], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.8ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 10], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  Rendered restaurants/ranking.html.erb within layouts/application (35.9ms)
+Completed 200 OK in 85ms (Views: 79.8ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/restaurants/2/favorite" for 127.0.0.1 at 2017-12-31 22:04:57 +0800
+Processing by RestaurantsController#favorite as HTML
+  Parameters: {"authenticity_token"=>"fmVvM1A9muVzWNTwfgvJJJCkVdKatJNMYeB4A0moyrNTrzllgn2T+heBtKVm99j/ci2YYgwk1kiLpy7oWNwVpg==", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "restaurant_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["restaurant_id", 2], ["created_at", "2017-12-31 14:04:57.370938"], ["updated_at", "2017-12-31 14:04:57.370938"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "restaurants" SET "favorites_count" = COALESCE("favorites_count", 0) + 1 WHERE "restaurants"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/restaurants/ranking
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/restaurants/ranking" for 127.0.0.1 at 2017-12-31 22:04:57 +0800
+Processing by RestaurantsController#ranking as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering restaurants/ranking.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.6ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" ORDER BY "restaurants"."favorites_count" DESC LIMIT ?[0m  [["LIMIT", 10]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (2.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 2], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 3], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 7], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.4ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 4], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.2ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 5], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 6], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.4ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 8], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.4ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 9], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 10], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (0.9ms)
+  Rendered restaurants/ranking.html.erb within layouts/application (39.0ms)
+Completed 200 OK in 87ms (Views: 81.7ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/restaurants/2/unfavorite" for 127.0.0.1 at 2017-12-31 22:04:59 +0800
+Processing by RestaurantsController#unfavorite as HTML
+  Parameters: {"authenticity_token"=>"DaOyN/jjMgwsTJ3if1GXAQvhz/eYz0/5a2gsFqEG4SIgaeRhKqM7E0iV/bdnrYba6WgCRw5fCv2BL3r9sHI+Nw==", "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFavorite Load (0.1ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."restaurant_id" = 2 AND "favorites"."user_id" = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = ?[0m  [["id", 43]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "restaurants" SET "favorites_count" = COALESCE("favorites_count", 0) - 1 WHERE "restaurants"."id" = ?[0m  [["id", 2]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/restaurants/ranking
+Completed 302 Found in 7ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/restaurants/ranking" for 127.0.0.1 at 2017-12-31 22:04:59 +0800
+Processing by RestaurantsController#ranking as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering restaurants/ranking.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.6ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" ORDER BY "restaurants"."favorites_count" DESC LIMIT ?[0m  [["LIMIT", 10]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.6ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 2], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.3ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 3], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 7], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 4], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (0.9ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 5], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 6], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 8], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.7ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 9], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.3ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 10], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  Rendered restaurants/ranking.html.erb within layouts/application (33.7ms)
+Completed 200 OK in 86ms (Views: 81.4ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/restaurants/2/favorite" for 127.0.0.1 at 2017-12-31 22:05:02 +0800
+Processing by RestaurantsController#favorite as HTML
+  Parameters: {"authenticity_token"=>"lGOhzf/IMboVXtywmbvJ/vCVocquiiYET0ptLUzgX+u5qfebLYg4pXGHvOWBR9glEhxsejgaYwClDTvGXZSA/g==", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "restaurant_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["restaurant_id", 2], ["created_at", "2017-12-31 14:05:02.341993"], ["updated_at", "2017-12-31 14:05:02.341993"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "restaurants" SET "favorites_count" = COALESCE("favorites_count", 0) + 1 WHERE "restaurants"."id" = ?[0m  [["id", 2]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/restaurants/ranking
+Completed 302 Found in 6ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/restaurants/ranking" for 127.0.0.1 at 2017-12-31 22:05:02 +0800
+Processing by RestaurantsController#ranking as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering restaurants/ranking.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.7ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" ORDER BY "restaurants"."favorites_count" DESC LIMIT ?[0m  [["LIMIT", 10]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.7ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 2], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.2ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 3], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.3ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 7], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.3ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 4], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 5], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 6], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 8], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.7ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 9], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.5ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 10], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.6ms)
+  Rendered restaurants/ranking.html.erb within layouts/application (36.5ms)
+Completed 200 OK in 88ms (Views: 82.7ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/restaurants/7/favorite" for 127.0.0.1 at 2017-12-31 22:05:05 +0800
+Processing by RestaurantsController#favorite as HTML
+  Parameters: {"authenticity_token"=>"oqdmt+bWdkLg4Thhi8OXJzLKRQri3gn0aHydmFnGsxePbTDhNJZ/XYQ4WDSTP4b80EOIunROTPCCO8tzSLJsAg==", "id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "restaurant_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["restaurant_id", 7], ["created_at", "2017-12-31 14:05:05.491893"], ["updated_at", "2017-12-31 14:05:05.491893"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "restaurants" SET "favorites_count" = COALESCE("favorites_count", 0) + 1 WHERE "restaurants"."id" = ?[0m  [["id", 7]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/restaurants/ranking
+Completed 302 Found in 6ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/restaurants/ranking" for 127.0.0.1 at 2017-12-31 22:05:05 +0800
+Processing by RestaurantsController#ranking as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering restaurants/ranking.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.5ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" ORDER BY "restaurants"."favorites_count" DESC LIMIT ?[0m  [["LIMIT", 10]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (2.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 2], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.2ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 7], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 3], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.5ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 4], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 5], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.6ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 6], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 8], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 9], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 10], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.5ms)
+  Rendered restaurants/ranking.html.erb within layouts/application (34.5ms)
+Completed 200 OK in 83ms (Views: 78.4ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/restaurants/7/unfavorite" for 127.0.0.1 at 2017-12-31 22:05:12 +0800
+Processing by RestaurantsController#unfavorite as HTML
+  Parameters: {"authenticity_token"=>"PoEQp0QhWZ88E/BTkA2cWKU64Yjb7ktASNwvVPv55eETS0bxlmFQgFjKkAaI8Y2DR7MsOE1+DkSim3m/6o069A==", "id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mFavorite Load (0.1ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."restaurant_id" = 7 AND "favorites"."user_id" = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = ?[0m  [["id", 45]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "restaurants" SET "favorites_count" = COALESCE("favorites_count", 0) - 1 WHERE "restaurants"."id" = ?[0m  [["id", 7]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/restaurants/ranking
+Completed 302 Found in 7ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/restaurants/ranking" for 127.0.0.1 at 2017-12-31 22:05:12 +0800
+Processing by RestaurantsController#ranking as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering restaurants/ranking.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.6ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" ORDER BY "restaurants"."favorites_count" DESC LIMIT ?[0m  [["LIMIT", 10]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.7ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 2], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.3ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 3], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 7], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 4], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 5], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.3ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 6], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.7ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 8], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.2ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 9], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 10], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  Rendered restaurants/ranking.html.erb within layouts/application (34.1ms)
+Completed 200 OK in 88ms (Views: 82.3ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/restaurants/7/favorite" for 127.0.0.1 at 2017-12-31 22:05:19 +0800
+Processing by RestaurantsController#favorite as HTML
+  Parameters: {"authenticity_token"=>"hhJQJcmXF6Wl/eD8mCpr5Zs9VQBmtCxY2aCzvTlZmeir2AZzG9ceusEkgKmA1no+ebSYsPAkaVwz5+VWKC1G/Q==", "id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "restaurant_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["restaurant_id", 7], ["created_at", "2017-12-31 14:05:19.679021"], ["updated_at", "2017-12-31 14:05:19.679021"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "restaurants" SET "favorites_count" = COALESCE("favorites_count", 0) + 1 WHERE "restaurants"."id" = ?[0m  [["id", 7]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/restaurants/ranking
+Completed 302 Found in 7ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/restaurants/ranking" for 127.0.0.1 at 2017-12-31 22:05:19 +0800
+Processing by RestaurantsController#ranking as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering restaurants/ranking.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.9ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" ORDER BY "restaurants"."favorites_count" DESC LIMIT ?[0m  [["LIMIT", 10]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (2.2ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 2], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 7], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (0.9ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 3], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.2ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 4], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.4ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 5], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 6], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 8], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 9], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 10], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.7ms)
+  Rendered restaurants/ranking.html.erb within layouts/application (35.1ms)
+Completed 200 OK in 83ms (Views: 77.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/restaurants/ranking" for 127.0.0.1 at 2017-12-31 22:07:50 +0800
+Processing by RestaurantsController#ranking as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering restaurants/ranking.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.8ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" ORDER BY "restaurants"."favorites_count" DESC LIMIT ?[0m  [["LIMIT", 10]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (9.9ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 2], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.9ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 7], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 3], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.3ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 4], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.9ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 5], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.3ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 6], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.4ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 8], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 9], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.4ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 10], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  Rendered restaurants/ranking.html.erb within layouts/application (53.7ms)
+Completed 200 OK in 123ms (Views: 93.8ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/restaurants/9/favorite" for 127.0.0.1 at 2017-12-31 22:07:54 +0800
+Processing by RestaurantsController#favorite as HTML
+  Parameters: {"authenticity_token"=>"/0NkBF0/IUh+Ro1nkr/wKsScot2IhhXyyS10EtiGk/HSiTJSj38oVxqf7TKKQ+HxJhVvbR4WUPYjaiL5yfJM5A==", "id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "restaurant_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["restaurant_id", 9], ["created_at", "2017-12-31 14:07:54.125547"], ["updated_at", "2017-12-31 14:07:54.125547"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "restaurants" SET "favorites_count" = COALESCE("favorites_count", 0) + 1 WHERE "restaurants"."id" = ?[0m  [["id", 9]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/restaurants/ranking
+Completed 302 Found in 11ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/restaurants/ranking" for 127.0.0.1 at 2017-12-31 22:07:54 +0800
+Processing by RestaurantsController#ranking as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering restaurants/ranking.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.6ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" ORDER BY "restaurants"."favorites_count" DESC LIMIT ?[0m  [["LIMIT", 10]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.9ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 2], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.3ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 7], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 3], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 9], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 4], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.8ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 5], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.3ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 6], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 8], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 10], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  Rendered restaurants/ranking.html.erb within layouts/application (34.4ms)
+Completed 200 OK in 91ms (Views: 86.1ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/restaurants/10/favorite" for 127.0.0.1 at 2017-12-31 22:07:56 +0800
+Processing by RestaurantsController#favorite as HTML
+  Parameters: {"authenticity_token"=>"Vy7aMhMJWqvpzH+6h4lSOVaZzkdCXTXKrXrfRxCPBDp65IxkwUlTtI0VH++fdUPitBAD99TNcM5HPYmsAfvbLw==", "id"=>"10"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "restaurant_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["restaurant_id", 10], ["created_at", "2017-12-31 14:07:56.774476"], ["updated_at", "2017-12-31 14:07:56.774476"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "restaurants" SET "favorites_count" = COALESCE("favorites_count", 0) + 1 WHERE "restaurants"."id" = ?[0m  [["id", 10]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/restaurants/ranking
+Completed 302 Found in 6ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/restaurants/ranking" for 127.0.0.1 at 2017-12-31 22:07:56 +0800
+Processing by RestaurantsController#ranking as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering restaurants/ranking.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.6ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" ORDER BY "restaurants"."favorites_count" DESC LIMIT ?[0m  [["LIMIT", 10]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.9ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 2], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.4ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 7], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 3], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (0.9ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 9], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 10], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 4], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.2ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 5], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.7ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 6], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 8], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  Rendered restaurants/ranking.html.erb within layouts/application (34.5ms)
+Completed 200 OK in 83ms (Views: 77.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/restaurants/10" for 127.0.0.1 at 2017-12-31 22:08:02 +0800
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 10], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (7.9ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 10], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (5.3ms)
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."restaurant_id" = ?[0m  [["restaurant_id", 10]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered restaurants/show.html.erb within layouts/application (47.4ms)
+Completed 200 OK in 108ms (Views: 90.0ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/restaurants/10/unfavorite" for 127.0.0.1 at 2017-12-31 22:08:04 +0800
+Processing by RestaurantsController#unfavorite as HTML
+  Parameters: {"authenticity_token"=>"IwfMIaV6aELiV/+9yTyZiQevniO8Gbv0Y/Zn1edSZCIOzZp3dzphXYaOn+jRwIhS5SZTkyqJ/vCJsTE+9ia7Nw==", "id"=>"10"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mFavorite Load (0.1ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."restaurant_id" = 10 AND "favorites"."user_id" = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = ?[0m  [["id", 48]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "restaurants" SET "favorites_count" = COALESCE("favorites_count", 0) - 1 WHERE "restaurants"."id" = ?[0m  [["id", 10]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/restaurants/10
+Completed 302 Found in 8ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/restaurants/10" for 127.0.0.1 at 2017-12-31 22:08:04 +0800
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 10], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (2.3ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 10], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.5ms)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."restaurant_id" = ?[0m  [["restaurant_id", 10]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered restaurants/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 74ms (Views: 69.4ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/restaurants/10/favorite" for 127.0.0.1 at 2017-12-31 22:08:05 +0800
+Processing by RestaurantsController#favorite as HTML
+  Parameters: {"authenticity_token"=>"2zfj6gB2occU6EsWZryWmH7VSfzG3Nlr6EbylzRnqIH2/bW80jao2HAxK0N+QIdDnFyETFBMnG8CAaR8JRN3lA==", "id"=>"10"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "restaurant_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["restaurant_id", 10], ["created_at", "2017-12-31 14:08:05.785250"], ["updated_at", "2017-12-31 14:08:05.785250"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "restaurants" SET "favorites_count" = COALESCE("favorites_count", 0) + 1 WHERE "restaurants"."id" = ?[0m  [["id", 10]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/restaurants/10
+Completed 302 Found in 7ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/restaurants/10" for 127.0.0.1 at 2017-12-31 22:08:05 +0800
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 10], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (2.2ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 10], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.4ms)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."restaurant_id" = ?[0m  [["restaurant_id", 10]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered restaurants/show.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 63ms (Views: 58.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-31 22:08:10 +0800
+Processing by RestaurantsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" LIMIT ? OFFSET ?[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (2.2ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (2.0ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 2], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 2], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.2ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 3], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.5ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 3], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.1ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 4], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.2ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 4], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.1ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 5], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.2ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 5], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.2ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 6], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 6], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.8ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 7], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.3ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 7], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.2ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 8], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.3ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 8], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.1ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 9], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 9], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  Rendered shared/_restaurant_list.html.erb (104.8ms)
+  Rendered restaurants/index.html.erb within layouts/application (108.3ms)
+Completed 200 OK in 162ms (Views: 153.8ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/restaurants/ranking" for 127.0.0.1 at 2017-12-31 22:08:11 +0800
+Processing by RestaurantsController#ranking as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering restaurants/ranking.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.5ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" ORDER BY "restaurants"."favorites_count" DESC LIMIT ?[0m  [["LIMIT", 10]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (2.0ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 2], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.5ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 7], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.3ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 3], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.3ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 9], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 10], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 4], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.6ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 5], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.2ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 6], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (0.9ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 8], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (0.9ms)
+  Rendered restaurants/ranking.html.erb within layouts/application (34.8ms)
+Completed 200 OK in 81ms (Views: 75.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/restaurants/feeds" for 127.0.0.1 at 2017-12-31 22:08:13 +0800
+Processing by RestaurantsController#feeds as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering restaurants/feeds.html.erb within layouts/application
+  [1m[36mRestaurant Load (1.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" ORDER BY "restaurants"."created_at" DESC LIMIT ?[0m  [["LIMIT", 10]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" ORDER BY "comments"."created_at" DESC LIMIT ?[0m  [["LIMIT", 10]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 500], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 500], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 500], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 499], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 499], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 499], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 498], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 498], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Restaurant Load (0.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 498], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendered restaurants/feeds.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 83ms (Views: 75.2ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/admin/restaurants" for 127.0.0.1 at 2017-12-31 22:08:14 +0800
+Processing by Admin::RestaurantsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin/restaurants/index.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  Rendered admin/restaurants/index.html.erb within layouts/application (53.9ms)
+Completed 200 OK in 108ms (Views: 102.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/admin/categories" for 127.0.0.1 at 2017-12-31 22:08:15 +0800
+Processing by Admin::CategoriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered admin/categories/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 74ms (Views: 67.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-31 22:08:20 +0800
+Processing by RestaurantsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" LIMIT ? OFFSET ?[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (2.1ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (2.0ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 2], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.5ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 2], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.8ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 3], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.4ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 3], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.1ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 4], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.8ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 4], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.2ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 5], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.2ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 5], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (7.3ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 6], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.9ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 6], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.4ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 7], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.4ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 7], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.3ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 8], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (2.3ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 8], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.5ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 9], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.2ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 9], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.1ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  Rendered shared/_restaurant_list.html.erb (116.1ms)
+  Rendered restaurants/index.html.erb within layouts/application (119.6ms)
+Completed 200 OK in 204ms (Views: 195.9ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/categories/2" for 127.0.0.1 at 2017-12-31 22:08:22 +0800
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."category_id" = ? LIMIT ? OFFSET ?[0m  [["category_id", 2], ["LIMIT", 9], ["OFFSET", 0]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 6], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (3.2ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 6], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (2.7ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 14], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.9ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 14], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.8ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 19], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.3ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 19], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (9.7ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 20], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.8ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 20], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.4ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 22], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.4ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 22], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.3ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 24], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.6ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 24], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 32], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.2ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 32], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.0ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 52], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.6ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 52], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.3ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 60], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 60], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.4ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants" WHERE "restaurants"."category_id" = ?[0m  [["category_id", 2]]
+  Rendered shared/_restaurant_list.html.erb (112.5ms)
+  Rendered categories/show.html.erb within layouts/application (118.0ms)
+Completed 200 OK in 172ms (Views: 158.0ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/categories/3" for 127.0.0.1 at 2017-12-31 22:08:23 +0800
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."category_id" = ? LIMIT ? OFFSET ?[0m  [["category_id", 3], ["LIMIT", 9], ["OFFSET", 0]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 2], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (2.0ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 2], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.5ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 4], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.4ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 4], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.3ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 11], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.9ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 11], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.6ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 25], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.2ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 25], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (2.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 26], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.4ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 26], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 33], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (5.8ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 33], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.7ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 58], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.3ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 58], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.3ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 63], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.2ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 63], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.3ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 66], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.5ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 66], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.4ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants" WHERE "restaurants"."category_id" = ?[0m  [["category_id", 3]]
+  Rendered shared/_restaurant_list.html.erb (106.7ms)
+  Rendered categories/show.html.erb within layouts/application (111.1ms)
+Completed 200 OK in 165ms (Views: 156.8ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/categories/4" for 127.0.0.1 at 2017-12-31 22:08:24 +0800
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."category_id" = ? LIMIT ? OFFSET ?[0m  [["category_id", 4], ["LIMIT", 9], ["OFFSET", 0]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 13], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.9ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 13], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.5ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 16], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.5ms)
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 16], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.6ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 18], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.2ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 18], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.1ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 23], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.4ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 23], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.4ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 31], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 31], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.2ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 39], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.2ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 39], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.1ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 42], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.4ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 42], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.8ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 44], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.3ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 44], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.3ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 49], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (2.3ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 49], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.3ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants" WHERE "restaurants"."category_id" = ?[0m  [["category_id", 4]]
+  Rendered shared/_restaurant_list.html.erb (96.2ms)
+  Rendered categories/show.html.erb within layouts/application (99.8ms)
+Completed 200 OK in 151ms (Views: 137.3ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/categories/5" for 127.0.0.1 at 2017-12-31 22:08:25 +0800
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."category_id" = ? LIMIT ? OFFSET ?[0m  [["category_id", 5], ["LIMIT", 9], ["OFFSET", 0]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 10], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (2.2ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 10], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.8ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 29], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.5ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 29], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.2ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 35], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.3ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 35], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.6ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 43], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 43], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (7.5ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 46], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.9ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 46], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.3ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 47], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 47], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.3ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 48], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 48], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 55], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 55], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.1ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 62], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 62], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.4ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants" WHERE "restaurants"."category_id" = ?[0m  [["category_id", 5]]
+  Rendered shared/_restaurant_list.html.erb (105.4ms)
+  Rendered categories/show.html.erb within layouts/application (108.5ms)
+Completed 200 OK in 164ms (Views: 156.5ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/categories/6" for 127.0.0.1 at 2017-12-31 22:08:26 +0800
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."category_id" = ? LIMIT ? OFFSET ?[0m  [["category_id", 6], ["LIMIT", 9], ["OFFSET", 0]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 5], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (2.6ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 5], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.9ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 12], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.8ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 12], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.2ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 15], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.2ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 15], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 27], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 27], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.0ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 30], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 30], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.9ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 37], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.4ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 37], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.2ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 54], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.2ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 54], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (0.9ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 56], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (4.9ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 56], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.7ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 59], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 59], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.1ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants" WHERE "restaurants"."category_id" = ?[0m  [["category_id", 6]]
+  Rendered shared/_restaurant_list.html.erb (99.3ms)
+  Rendered categories/show.html.erb within layouts/application (102.5ms)
+Completed 200 OK in 154ms (Views: 145.8ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/categories/7" for 127.0.0.1 at 2017-12-31 22:08:26 +0800
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."category_id" = ? LIMIT ? OFFSET ?[0m  [["category_id", 7], ["LIMIT", 9], ["OFFSET", 0]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (2.0ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.8ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 7], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (2.5ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 7], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.6ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 8], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.3ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 8], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.0ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 17], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 17], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.0ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 28], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (2.0ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 28], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.4ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 34], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.3ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 34], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 40], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.2ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 40], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 41], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 41], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (0.9ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 45], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (6.6ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 45], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.7ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants" WHERE "restaurants"."category_id" = ?[0m  [["category_id", 7]]
+  Rendered shared/_restaurant_list.html.erb (103.4ms)
+  Rendered categories/show.html.erb within layouts/application (106.8ms)
+Completed 200 OK in 164ms (Views: 155.8ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2017-12-31 22:08:29 +0800
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."category_id" = ? LIMIT ? OFFSET ?[0m  [["category_id", 1], ["LIMIT", 9], ["OFFSET", 0]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 3], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (2.8ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 3], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (2.2ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 9], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.3ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 9], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (2.6ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 21], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 21], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.0ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 36], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 36], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.3ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 38], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 38], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.0ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 53], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 53], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.7ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 61], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.4ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 61], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.4ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 67], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.2ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 67], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (0.9ms)
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 88], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 88], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (8.4ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants" WHERE "restaurants"."category_id" = ?[0m  [["category_id", 1]]
+  Rendered shared/_restaurant_list.html.erb (105.0ms)
+  Rendered categories/show.html.erb within layouts/application (108.4ms)
+Completed 200 OK in 164ms (Views: 156.1ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-31 22:08:31 +0800
+Processing by RestaurantsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" LIMIT ? OFFSET ?[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (2.2ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.5ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 2], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.3ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 2], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.3ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 3], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.2ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 3], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.0ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 4], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.1ms)
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 4], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.9ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 5], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.6ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 5], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.0ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 6], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 6], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.0ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 7], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.0ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 7], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (0.9ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 8], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.7ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 8], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.4ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 9], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_favorite.html.erb (1.2ms)
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."restaurant_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["restaurant_id", 9], ["id", 1], ["LIMIT", 1]]
+  Rendered shared/_like.html.erb (1.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  Rendered shared/_restaurant_list.html.erb (116.2ms)
+  Rendered restaurants/index.html.erb within layouts/application (121.7ms)
+Completed 200 OK in 176ms (Views: 167.8ms | ActiveRecord: 4.5ms)
+
+
