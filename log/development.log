@@ -23385,3 +23385,424 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 58ms (Views: 55.3ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/users" for 127.0.0.1 at 2018-01-03 22:40:13 +0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (18.1ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `following?' for #<User:0x00007fc34775a758>
+Did you mean?  followings
+               followings=):
+    4:     <li>
+    5:       <%= user.name %>
+    6:         <% if user != current_user %>
+    7:             <% if current_user.following?(user) %>
+    8:               <%= link_to 'Unfollow', followship_path(user), method: :delete %>
+    9:             <% else %>
+   10:               <%= link_to 'Follow', followships_path(following_id: user), method: :post %>
+  
+app/views/users/index.html.erb:7:in `block in _app_views_users_index_html_erb__4309158416041254957_70238347117940'
+app/views/users/index.html.erb:3:in `_app_views_users_index_html_erb__4309158416041254957_70238347117940'
+Started GET "/users" for 127.0.0.1 at 2018-01-03 22:41:49 +0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (17.2ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `following?' for #<User:0x00007fc34bcda440>
+Did you mean?  followings
+               followings=):
+     5:     <li>
+     6:       <%= user.name %>
+     7:       <% if user != current_user %>
+     8:         <% if current_user.following?(user) %>
+     9:           <%= link_to 'Unfollow', followship_path(user), method: :delete %>
+    10:         <% else %>
+    11:           <%= link_to 'Follow', followships_path(following_id: user), method: :post %>
+  
+app/views/users/index.html.erb:8:in `block in _app_views_users_index_html_erb__4309158416041254957_70238383512140'
+app/views/users/index.html.erb:4:in `_app_views_users_index_html_erb__4309158416041254957_70238383512140'
+Started GET "/users" for 127.0.0.1 at 2018-01-03 22:42:16 +0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (17.6ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `following?' for #<User:0x00007fc3474a0fa8>
+Did you mean?  followings
+               followings=):
+     5:     <li>
+     6:       <%= user.name %>
+     7:       <% if user != current_user %>
+     8:         <% if current_user.following?(user) %>
+     9:           <%= link_to 'Unfollow', followship_path(user), method: :delete %>
+    10:         <% else %>
+    11:           <%= link_to 'Follow', followships_path(following_id: user), method: :post %>
+  
+app/views/users/index.html.erb:8:in `block in _app_views_users_index_html_erb__4309158416041254957_70238345676160'
+app/views/users/index.html.erb:4:in `_app_views_users_index_html_erb__4309158416041254957_70238345676160'
+Started GET "/users" for 127.0.0.1 at 2018-01-03 22:44:06 +0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (14.7ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `following' for #<User:0x00007fc3479d4830>
+Did you mean?  following?
+               followings
+               followings=):
+     5:     <li>
+     6:       <%= user.name %>
+     7:       <% if user != current_user %>
+     8:         <% if current_user.following?(user) %>
+     9:           <%= link_to 'Unfollow', followship_path(user), method: :delete %>
+    10:         <% else %>
+    11:           <%= link_to 'Follow', followships_path(following_id: user), method: :post %>
+  
+app/models/user.rb:28:in `following?'
+app/views/users/index.html.erb:8:in `block in _app_views_users_index_html_erb__4309158416041254957_70238348372320'
+app/views/users/index.html.erb:4:in `_app_views_users_index_html_erb__4309158416041254957_70238348372320'
+Started GET "/users" for 127.0.0.1 at 2018-01-03 22:44:18 +0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 13], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 14], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 15], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 19], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 20], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 21], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 22], ["LIMIT", 1]]
+  Rendered users/index.html.erb within layouts/application (63.7ms)
+Completed 200 OK in 127ms (Views: 103.0ms | ActiveRecord: 4.3ms)
+
+
+Started DELETE "/followships/2" for 127.0.0.1 at 2018-01-03 22:44:21 +0800
+Processing by FollowshipsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7K8GBAWlZgjVUmPAkXvbtzZDB2YM8Z1DBOG81VWm9+rBZVBS1+VvF7GLA5WJh8ps1MrK1pph2Efupuo+RNIo/w==", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFollowship Load (0.1ms)[0m  [1m[34mSELECT  "followships".* FROM "followships" WHERE "followships"."user_id" = ? AND "followships"."following_id" = ? ORDER BY "followships"."id" ASC LIMIT ?[0m  [["user_id", 1], ["following_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "followships" WHERE "followships"."id" = ?[0m  [["id", 1]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 9ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-01-03 22:44:21 +0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 13], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 14], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 15], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 19], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 20], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 21], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 22], ["LIMIT", 1]]
+  Rendered users/index.html.erb within layouts/application (36.0ms)
+Completed 200 OK in 95ms (Views: 89.0ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/followships?following_id=2" for 127.0.0.1 at 2018-01-03 22:44:23 +0800
+Processing by FollowshipsController#create as HTML
+  Parameters: {"authenticity_token"=>"lWGRFY1WJPx5B4tBf3V2yIU98XwcvV6imUQF1eLaOz24q8dDXxYt4x3e6xRniWcTZ7Q8zIotG6ZzA1M+867kKA==", "following_id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFollowship Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "followships" WHERE "followships"."following_id" = ? AND "followships"."user_id" = ? LIMIT ?[0m  [["following_id", 2], ["user_id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "followships" ("user_id", "following_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["following_id", 2], ["created_at", "2018-01-03 14:44:23.551343"], ["updated_at", "2018-01-03 14:44:23.551343"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 11ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-01-03 22:44:23 +0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 13], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 14], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 15], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 19], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 20], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 21], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 22], ["LIMIT", 1]]
+  Rendered users/index.html.erb within layouts/application (45.1ms)
+Completed 200 OK in 97ms (Views: 86.5ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/followships?following_id=3" for 127.0.0.1 at 2018-01-03 22:44:24 +0800
+Processing by FollowshipsController#create as HTML
+  Parameters: {"authenticity_token"=>"iZmnP3sHcyeimNxXWy3lgMVU1/7bvB6Hg+r6V/4rn3ukU/FpqUd6OMZBvAJD0fRbJ90aTk0sW4Npray8719Abg==", "following_id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFollowship Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "followships" WHERE "followships"."following_id" = ? AND "followships"."user_id" = ? LIMIT ?[0m  [["following_id", 3], ["user_id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "followships" ("user_id", "following_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["following_id", 3], ["created_at", "2018-01-03 14:44:24.809096"], ["updated_at", "2018-01-03 14:44:24.809096"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 6ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-01-03 22:44:24 +0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 13], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 14], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 15], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 19], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 20], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 21], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 22], ["LIMIT", 1]]
+  Rendered users/index.html.erb within layouts/application (47.3ms)
+Completed 200 OK in 106ms (Views: 100.2ms | ActiveRecord: 3.0ms)
+
+
+Started DELETE "/followships/3" for 127.0.0.1 at 2018-01-03 22:44:25 +0800
+Processing by FollowshipsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"PXbn1FQEil+ObO4PHA/PuaYo1RFDySf4yV9NN7lrWyMQvLGChkSDQOq1jloE895iRKEYodVZYvwjGBvcqB+ENg==", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFollowship Load (0.1ms)[0m  [1m[34mSELECT  "followships".* FROM "followships" WHERE "followships"."user_id" = ? AND "followships"."following_id" = ? ORDER BY "followships"."id" ASC LIMIT ?[0m  [["user_id", 1], ["following_id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "followships" WHERE "followships"."id" = ?[0m  [["id", 13]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 5ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-01-03 22:44:25 +0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 13], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 14], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 15], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 19], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 20], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 21], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 22], ["LIMIT", 1]]
+  Rendered users/index.html.erb within layouts/application (44.4ms)
+Completed 200 OK in 92ms (Views: 86.9ms | ActiveRecord: 2.7ms)
+
+
+Started DELETE "/followships/2" for 127.0.0.1 at 2018-01-03 22:44:26 +0800
+Processing by FollowshipsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ZxJz2Xgvx6jwJijLIv3SaahNGPzlp3zfhFodQsqSntlK2CWPqm/Ot5T/SJ46AcOySsTVTHM3OdtuHUup2+ZBzA==", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFollowship Load (0.1ms)[0m  [1m[34mSELECT  "followships".* FROM "followships" WHERE "followships"."user_id" = ? AND "followships"."following_id" = ? ORDER BY "followships"."id" ASC LIMIT ?[0m  [["user_id", 1], ["following_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "followships" WHERE "followships"."id" = ?[0m  [["id", 12]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 5ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-01-03 22:44:26 +0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 13], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 14], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 15], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 19], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 20], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 21], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 22], ["LIMIT", 1]]
+  Rendered users/index.html.erb within layouts/application (44.7ms)
+Completed 200 OK in 104ms (Views: 97.9ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/followships?following_id=4" for 127.0.0.1 at 2018-01-03 22:44:27 +0800
+Processing by FollowshipsController#create as HTML
+  Parameters: {"authenticity_token"=>"HNm4DoNqfj2y/yWqO2SYGkqaeHuLN1bZLoQfW7KaxYsxE+5YUSp3ItYmRf8jmInBqBO1yx2nE93Ew0mwo+4ang==", "following_id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFollowship Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "followships" WHERE "followships"."following_id" = ? AND "followships"."user_id" = ? LIMIT ?[0m  [["following_id", 4], ["user_id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "followships" ("user_id", "following_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["following_id", 4], ["created_at", "2018-01-03 14:44:27.522200"], ["updated_at", "2018-01-03 14:44:27.522200"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 7ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-01-03 22:44:27 +0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 13], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 14], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 15], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 19], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 20], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 21], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 22], ["LIMIT", 1]]
+  Rendered users/index.html.erb within layouts/application (29.2ms)
+Completed 200 OK in 83ms (Views: 77.1ms | ActiveRecord: 2.7ms)
+
+
+Started DELETE "/followships/4" for 127.0.0.1 at 2018-01-03 22:44:28 +0800
+Processing by FollowshipsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"kPbGSZ6q73NQJin3PZex9znTiQbo6QgggMW2eSDFQs+9PJAfTOrmbDT/SaIla6As21pEtn55TSRqguCSMbGd2g==", "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFollowship Load (0.1ms)[0m  [1m[34mSELECT  "followships".* FROM "followships" WHERE "followships"."user_id" = ? AND "followships"."following_id" = ? ORDER BY "followships"."id" ASC LIMIT ?[0m  [["user_id", 1], ["following_id", 4], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "followships" WHERE "followships"."id" = ?[0m  [["id", 14]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 5ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-01-03 22:44:28 +0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 13], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 14], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 15], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 19], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 20], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 21], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "followships" ON "users"."id" = "followships"."following_id" WHERE "followships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 22], ["LIMIT", 1]]
+  Rendered users/index.html.erb within layouts/application (45.3ms)
+Completed 200 OK in 99ms (Views: 93.9ms | ActiveRecord: 2.9ms)
+
+
