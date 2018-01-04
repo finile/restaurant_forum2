@@ -7,6 +7,9 @@ class UsersController < ApplicationController
 
   def show
     @commented_restaurants = @user.restaurants.reorder("name").uniq
+    @favorited_restaurants = @user.favorited_restaurants.reorder("name")
+    @followings = @user.followings.reorder("name")
+    @followers = @user.followers.reorder("name")
   end
 
   def edit
