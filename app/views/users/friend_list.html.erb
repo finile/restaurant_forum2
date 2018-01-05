@@ -1,0 +1,26 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <div class="panel panel-default">
+        
+        <div class="panel-heading">
+          <strong> <%= current_user.all_friends.count %></strong>位朋友
+        </div>
+
+        <div class="panel-center panel-body">
+          <% @friends.each do |friend| %>
+            <div class="friend-item text-center">
+                <!-- <%= image_tag friend.avatar, class: "img-circle", size: "50" %> -->
+                <img src="http://via.placeholder.com/128x128" class="img-rounded">
+              <p class="text-primary inline"><%= friend.name %></p>
+              <hr>
+            </div>
+          <% end %>
+        </div>
+     
+      </div>
+
+    </div>
+  </div>
+</div>

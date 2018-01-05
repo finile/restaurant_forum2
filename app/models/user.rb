@@ -25,6 +25,9 @@ class User < ApplicationRecord
   has_many :friendships, dependent: :destroy
   has_many :friends, through: :friendships
 
+  has_many :inverse_friendships, class_name: "Friendship", foreign_key: "friend_id"
+  has_many :add_friends, through: :inverse_friendships, source: :user
+
 
   def admin?
     self.role == "admin"
@@ -37,5 +40,11 @@ class User < ApplicationRecord
   def friendship?(user)
     self.friends.include?(user)
   end
+
+  def all_friends
+    @all_friends = self.friends.all + self.add_friends
+    @all_friends = @all_friends.uniq
+  end
+  
 
 end

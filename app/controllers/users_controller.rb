@@ -24,6 +24,10 @@ class UsersController < ApplicationController
   end
 
 
+  def friend_list
+    @friends = current_user.all_friends
+  end
+
 
 private
 
