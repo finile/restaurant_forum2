@@ -43,7 +43,7 @@ class User < ApplicationRecord
 
   def all_friends
     @all_friends = self.friends.all + self.add_friends
-    @all_friends = @all_friends.uniq
+    @all_friends.uniq
   end
   
 
