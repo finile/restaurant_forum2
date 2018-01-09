@@ -42,7 +42,7 @@ class User < ApplicationRecord
   end
 
   def all_friends
-    @all_friends = self.friends.all + self.add_friends
+    @all_friends = self.friends.all.reorder("name") + self.add_friends.reorder("name")
     @all_friends.uniq
   end
   
